@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLineEdit" name="SearchEdit_2">
+        <property name="placeholderText">
+         <string>example</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="Search">
+        <property name="text">
+         <string>Search</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <widget class="Result" name="TextBrowser"/>
+    </item>
+    <item row="2" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLineEdit" name="year">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>YEAR</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="zanr">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>ZANR</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="Name_2">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>NAME</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="Time">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>TIME</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="add_2">
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="text">
+         <string>File</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Result</class>
+   <extends>QTextBrowser</extends>
+   <header>result.h</header>
+   <slots>
+    <signal>Search()</signal>
+    <signal>Clicked()</signal>
+    <slot>FindFilm()</slot>
+    <slot>AddFilm()</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>Search</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>FindFilm()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>771</x>
+     <y>42</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>798</x>
+     <y>39</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>add_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>AddFilm()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>655</x>
+     <y>559</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>633</x>
+     <y>570</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>add_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>UploadFilm()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>679</x>
+     <y>557</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>727</x>
+     <y>572</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <signal>Clicked()</signal>
+  <slot>FindFilm()</slot>
+  <slot>AddFilm()</slot>
+  <slot>UpploadFilm()</slot>
+  <slot>UploadFilm()</slot>
+ </slots>
+</ui>
